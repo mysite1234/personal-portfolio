@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Header from "../page";
+
 // Custom animation keyframes for Tailwind
 const AnimationStyles = () => {
   return (
@@ -62,6 +63,99 @@ const AnimationStyles = () => {
   );
 };
 
+// Download CV Button Component
+const DownloadCVButton = () => {
+  const [isDownloading, setIsDownloading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const handleDownload = async () => {
+    setIsDownloading(true);
+    setError(null);
+    
+    try {
+      // Using your specific PDF file path
+      const response = await fetch("/Manoj_G_Resume (4).pdf");
+      
+      if (!response.ok) {
+        throw new Error(`Failed to fetch PDF: ${response.status} ${response.statusText}`);
+      }
+      
+      const blob = await response.blob();
+      
+      // Check if blob is valid
+      if (blob.size === 0) {
+        throw new Error("Empty PDF file");
+      }
+      
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "Manoj_Frontend_Developer_Resume.pdf"; // Clean filename for download
+      link.style.display = "none";
+      document.body.appendChild(link);
+      link.click();
+      
+      // Cleanup
+      setTimeout(() => {
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(link);
+      }, 100);
+      
+    } catch (error) {
+      console.error("Download failed:", error);
+      setError(error.message);
+      
+      // Fallback: Try direct download method
+      try {
+        const link = document.createElement("a");
+        link.href = "/Manoj_G_Resume (4).pdf";
+        link.download = "Manoj_Frontend_Developer_Resume.pdf";
+        link.style.display = "none";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } catch (fallbackError) {
+        console.error("Fallback download also failed:", fallbackError);
+      }
+    } finally {
+      setIsDownloading(false);
+    }
+  };
+
+  return (
+    <>
+      <button
+        onClick={handleDownload}
+        disabled={isDownloading}
+        className="w-full sm:w-auto bg-gradient-to-br from-teal-700 to-blue-600 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl shadow-lg animate-slide-left-08 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+      >
+        {isDownloading ? (
+          <>
+            <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            Downloading...
+          </>
+        ) : (
+          <>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Download CV
+          </>
+        )}
+      </button>
+      
+      {error && (
+        <div className="mt-2 text-sm text-red-600">
+          Failed to download. Please try again or <a href="/Manoj_G_Resume (4).pdf" target="_blank" className="underline">open in new tab</a>.
+        </div>
+      )}
+    </>
+  );
+};
+
 // Main Component
 const AboutSection = () => {
   const [typewriterDone, setTypewriterDone] = useState(false);
@@ -114,16 +208,6 @@ const AboutSection = () => {
 
     return () => clearInterval(timer);
   }, [mounted]);
-
-  const handleDownloadCV = () => {
-    const cvUrl = "/cv.pdf";
-    const link = document.createElement("a");
-    link.href = cvUrl;
-    link.download = "Manoj_Frontend_Developer_CV.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
 
   const handleContactClick = () => {
     window.location.href = "/contact";
@@ -201,7 +285,7 @@ const AboutSection = () => {
             {/* Stats Grid - Full width */}
             <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-5 my-10">
               {[
-                { number: "2+", label: "Projects", className: "animate-stat-card-08" },
+                { number: "3+", label: "Projects", className: "animate-stat-card-08" },
                 { number: "2", label: "Years Exp", className: "animate-stat-card-09" },
                 { number: "100%", label: "Satisfaction", className: "animate-stat-card-10" },
               ].map((stat, index) => (
@@ -217,16 +301,14 @@ const AboutSection = () => {
 
             {/* Button Group - Full width */}
             <div className="w-full flex flex-col sm:flex-row gap-4 mt-10">
-              <button 
-                onClick={handleDownloadCV}
-                className={`w-full sm:w-auto bg-gradient-to-br from-teal-700 to-blue-600 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl shadow-lg animate-slide-left-08`}
-              >
-                Download CV
-              </button>
+              <DownloadCVButton />
               <button 
                 onClick={handleContactClick}
-                className={`w-full sm:w-auto bg-white border-2 border-teal-700 text-teal-700 font-semibold py-4 px-8 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:bg-teal-700 hover:text-white shadow-lg animate-slide-left-09`}
+                className={`w-full sm:w-auto bg-white border-2 border-teal-700 text-teal-700 font-semibold py-4 px-8 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:bg-teal-700 hover:text-white shadow-lg animate-slide-left-09 flex items-center justify-center gap-2`}
               >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
                 Contact Me
               </button>
             </div>

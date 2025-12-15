@@ -83,7 +83,7 @@ const AnimationStyles = () => {
   );
 };
 
-// Skill categories with icons and colors
+// Updated skill categories with only specified TECHNICAL SKILLS
 const skillCategories = [
   {
     title: "Frontend Development",
@@ -92,105 +92,83 @@ const skillCategories = [
     bgColor: "bg-gradient-to-br from-blue-50 to-cyan-50",
     borderColor: "border-blue-100",
     skills: [
-      { name: "React", level: 95, icon: "⚛️" },
-      { name: "Next.js", level: 90, icon: "▲" },
-      { name: "TypeScript", level: 88, icon: "📘" },
-      { name: "JavaScript", level: 92, icon: "🟨" },
-      { name: "Tailwind CSS", level: 94, icon: "🎨" },
-      { name: "HTML5/CSS3", level: 96, icon: "🌐" },
+      { name: "HTML5", level: 95, icon: "🌐" },
+      { name: "CSS3", level: 92, icon: "🎨" },
+      { name: "JavaScript (ES6+)", level: 90, icon: "🟨" },
+      { name: "React.js", level: 88, icon: "⚛️" },
+      { name: "Next.js", level: 85, icon: "▲" },
     ]
   },
   {
-    title: "UI/UX Design",
-    icon: <Palette className="w-6 h-6" />,
-    color: "from-purple-500 to-pink-500",
-    bgColor: "bg-gradient-to-br from-purple-50 to-pink-50",
-    borderColor: "border-purple-100",
-    skills: [
-      { name: "Figma", level: 88, icon: "🎨" },
-      { name: "UI Design", level: 85, icon: "✨" },
-      { name: "UX Research", level: 82, icon: "🔍" },
-      { name: "Prototyping", level: 84, icon: "⚡" },
-      { name: "Design Systems", level: 80, icon: "📐" },
-      { name: "Responsive Design", level: 95, icon: "📱" },
-    ]
-  },
-  {
-    title: "Backend & DevOps",
+    title: "Backend",
     icon: <Server className="w-6 h-6" />,
     color: "from-green-500 to-emerald-500",
     bgColor: "bg-gradient-to-br from-green-50 to-emerald-50",
     borderColor: "border-green-100",
     skills: [
-      { name: "Node.js", level: 85, icon: "🟢" },
-      { name: "Express.js", level: 82, icon: "🚀" },
-      { name: "MongoDB", level: 80, icon: "🍃" },
-      { name: "REST APIs", level: 88, icon: "🔗" },
-      { name: "GraphQL", level: 75, icon: "📊" },
-      { name: "Docker", level: 70, icon: "🐳" },
+      { name: "Node.js", level: 75, icon: "🟢" },
+      { name: "SQL", level: 80, icon: "🗃️" },
+      { name: "REST APIs", level: 85, icon: "🔗" },
+      { name: "API Integration", level: 82, icon: "🔌" },
     ]
   },
   {
-    title: "AI & Tools",
+    title: "Design & AI Tools",
     icon: <Cpu className="w-6 h-6" />,
     color: "from-orange-500 to-red-500",
     bgColor: "bg-gradient-to-br from-orange-50 to-red-50",
     borderColor: "border-orange-100",
     skills: [
-      { name: "ChatGPT", level: 90, icon: "🤖" },
-      { name: "AI Integration", level: 85, icon: "🧠" },
-      { name: "Git", level: 88, icon: "📦" },
-      { name: "VS Code", level: 95, icon: "💻" },
-      { name: "Vite", level: 85, icon: "⚡" },
-      { name: "Testing", level: 82, icon: "🧪" },
+      { name: "Canva", level: 80, icon: "🎨" },
+      { name: "ChatGPT", level: 85, icon: "🤖" },
+      { name: "DeepSeek", level: 82, icon: "🔍" },
+      { name: "Blackbox AI", level: 75, icon: "📦" },
     ]
   }
 ];
 
-// Featured skills with detailed descriptions
+// Featured skills with detailed descriptions (updated with your skills)
 const featuredSkills = [
   {
-    title: "React Ecosystem",
-    description: "Building scalable, performant applications with modern React patterns",
+    title: "Frontend Development",
+    description: "HTML5, CSS3, JavaScript, React.js, Next.js",
     icon: <Code className="w-8 h-8" />,
     color: "bg-blue-500",
-    percentage: 95
+    percentage: 90,
+    skillsList: ["HTML5 95%", "CSS3 92%", "JavaScript 90%", "React.js 88%", "Next.js 85%"]
   },
   {
-    title: "Next.js Framework",
-    description: "Server-side rendering, static generation, and full-stack capabilities",
-    icon: <Globe className="w-8 h-8" />,
-    color: "bg-black",
-    percentage: 90
+    title: "Backend & APIs",
+    description: "Node.js, SQL, REST APIs, API Integration",
+    icon: <Server className="w-8 h-8" />,
+    color: "bg-green-500",
+    percentage: 80,
+    skillsList: ["Node.js 75%", "SQL", "REST APIs 85%", "API Integration 82%"]
   },
   {
-    title: "TypeScript",
-    description: "Type-safe development with better code maintainability",
-    icon: <Terminal className="w-8 h-8" />,
-    color: "bg-blue-600",
-    percentage: 88
-  },
-  {
-    title: "UI/UX Design",
-    description: "Creating intuitive and beautiful user interfaces",
+    title: "Design & AI Tools",
+    description: "Canva, ChatGPT, DeepSeek, Blackbox AI",
     icon: <Palette className="w-8 h-8" />,
     color: "bg-purple-500",
-    percentage: 85
+    percentage: 80,
+    skillsList: ["Canva 80%", "ChatGPT 85%", "DeepSeek 82%", "Blackbox AI 75%"]
   }
 ];
 
-// Tech stack badges
+// Tech stack badges (simplified to match your skills)
 const techStack = [
-  { name: "React", icon: "⚛️", color: "border-blue-200 bg-blue-50 text-blue-700" },
-  { name: "Next.js", icon: "▲", color: "border-gray-200 bg-gray-50 text-gray-700" },
-  { name: "TypeScript", icon: "📘", color: "border-blue-200 bg-blue-50 text-blue-700" },
-  { name: "Tailwind", icon: "🎨", color: "border-cyan-200 bg-cyan-50 text-cyan-700" },
-  { name: "Node.js", icon: "🟢", color: "border-green-200 bg-green-50 text-green-700" },
-  { name: "MongoDB", icon: "🍃", color: "border-emerald-200 bg-emerald-50 text-emerald-700" },
-  { name: "Figma", icon: "🎨", color: "border-purple-200 bg-purple-50 text-purple-700" },
-  { name: "Git", icon: "📦", color: "border-orange-200 bg-orange-50 text-orange-700" },
-  { name: "Vite", icon: "⚡", color: "border-yellow-200 bg-yellow-50 text-yellow-700" },
-  { name: "Docker", icon: "🐳", color: "border-blue-200 bg-blue-50 text-blue-700" },
+  { name: "HTML5", icon: "🌐", color: "border-orange-200 bg-orange-50 text-orange-700", percentage: 95 },
+  { name: "CSS3", icon: "🎨", color: "border-blue-200 bg-blue-50 text-blue-700", percentage: 92 },
+  { name: "JavaScript", icon: "🟨", color: "border-yellow-200 bg-yellow-50 text-yellow-700", percentage: 90 },
+  { name: "React.js", icon: "⚛️", color: "border-cyan-200 bg-cyan-50 text-cyan-700", percentage: 88 },
+  { name: "Next.js", icon: "▲", color: "border-gray-200 bg-gray-50 text-gray-700", percentage: 85 },
+  { name: "Node.js", icon: "🟢", color: "border-green-200 bg-green-50 text-green-700", percentage: 75 },
+  { name: "SQL", icon: "🗃️", color: "border-indigo-200 bg-indigo-50 text-indigo-700" },
+  { name: "REST APIs", icon: "🔗", color: "border-red-200 bg-red-50 text-red-700", percentage: 85 },
+  { name: "Canva", icon: "🎨", color: "border-purple-200 bg-purple-50 text-purple-700", percentage: 80 },
+  { name: "ChatGPT", icon: "🤖", color: "border-green-200 bg-green-50 text-green-700", percentage: 85 },
+  { name: "DeepSeek", icon: "🔍", color: "border-blue-200 bg-blue-50 text-blue-700", percentage: 82 },
+  { name: "Blackbox AI", icon: "📦", color: "border-black bg-black text-white", percentage: 75 },
 ];
 
 // Main Component
@@ -233,7 +211,7 @@ function SkillsPage() {
               className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-50 to-purple-50 rounded-full border border-blue-100 mb-6"
             >
               <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium text-gray-700">TECHNICAL EXPERTISE</span>
+              <span className="text-sm font-medium text-gray-700">TECHNICAL SKILLS</span>
             </motion.div>
             
             <motion.h1 
@@ -243,10 +221,10 @@ function SkillsPage() {
               className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6"
             >
               <div className="relative inline-block">
-                <span className="text-gray-900">Skills &</span>
+                <span className="text-gray-900">Technical</span>
                 <br />
                 <span className="relative">
-                  <span className="gradient-text">Expertise</span>
+                  <span className="gradient-text">Skills</span>
                   <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
                 </span>
               </div>
@@ -258,49 +236,12 @@ function SkillsPage() {
               transition={{ delay: 0.4 }}
               className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed"
             >
-              A comprehensive overview of my technical skills, tools, and capabilities 
-              in modern web development and design
+              A focused overview of my core technical skills in frontend development, backend technologies, and modern tools
             </motion.p>
           </motion.div>
 
           {/* Featured Skills */}
-          <motion.div 
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 lg:mb-20"
-          >
-            {featuredSkills.map((skill, index) => (
-              <motion.div
-                key={skill.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 + index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="group relative"
-              >
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-                <div className="relative bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className={`p-3 rounded-xl ${skill.color} bg-opacity-10`}>
-                      <div className={skill.color.replace('bg-', 'text-')}>
-                        {skill.icon}
-                      </div>
-                    </div>
-                    <div className="text-2xl font-bold gradient-text">{skill.percentage}%</div>
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{skill.title}</h3>
-                  <p className="text-gray-600 text-sm">{skill.description}</p>
-                  <div className="mt-4 h-2 bg-gray-100 rounded-full overflow-hidden">
-                    <div 
-                      className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-1000 ease-out"
-                      style={{ width: `${skill.percentage}%` }}
-                    ></div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+         
 
           {/* Categories Tabs */}
           <motion.div 
@@ -341,7 +282,7 @@ function SkillsPage() {
                 transition={{ duration: 0.3 }}
                 className={`rounded-3xl ${skillCategories[activeCategory].bgColor} p-8 border ${skillCategories[activeCategory].borderColor}`}
               >
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {skillCategories[activeCategory].skills.map((skill, index) => (
                     <motion.div
                       key={skill.name}
@@ -390,7 +331,7 @@ function SkillsPage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 <span className="gradient-text">Technology Stack</span>
               </h2>
-              <p className="text-gray-600">Technologies I work with regularly</p>
+              <p className="text-gray-600">All technologies I work with</p>
             </div>
             
             <div className="relative">
@@ -404,10 +345,15 @@ function SkillsPage() {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: index * 0.05, type: "spring" }}
                       whileHover={{ scale: 1.1, y: -3 }}
-                      className={`px-4 py-3 rounded-xl border ${tech.color} flex items-center gap-2 font-medium transition-all duration-300 hover:shadow-md`}
+                      className={`px-4 py-3 rounded-xl border ${tech.color} flex items-center gap-2 font-medium transition-all duration-300 hover:shadow-md relative group`}
                     >
-                      <span>{tech.icon}</span>
+                      <span className="text-lg">{tech.icon}</span>
                       <span>{tech.name}</span>
+                      {tech.percentage && (
+                        <div className="absolute -top-2 -right-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                          {tech.percentage}%
+                        </div>
+                      )}
                     </motion.div>
                   ))}
                 </div>
@@ -415,37 +361,7 @@ function SkillsPage() {
             </div>
           </motion.div>
 
-          {/* Stats Section */}
-          <motion.div 
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="bg-gradient-to-r from-blue-50 via-white to-purple-50 rounded-3xl p-8 border border-gray-100"
-          >
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="text-4xl font-bold gradient-text mb-2">50+</div>
-                <div className="text-gray-600 font-medium">Projects Completed</div>
-                <div className="text-sm text-gray-500 mt-1">Web & Mobile Apps</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold gradient-text mb-2">30+</div>
-                <div className="text-gray-600 font-medium">Technologies</div>
-                <div className="text-sm text-gray-500 mt-1">Modern Stack</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold gradient-text mb-2">3+</div>
-                <div className="text-gray-600 font-medium">Years Experience</div>
-                <div className="text-sm text-gray-500 mt-1">Production Level</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold gradient-text mb-2">100%</div>
-                <div className="text-gray-600 font-medium">Client Satisfaction</div>
-                <div className="text-sm text-gray-500 mt-1">5-star Reviews</div>
-              </div>
-            </div>
-          </motion.div>
+         
 
           {/* CTA Section */}
           <motion.div 
@@ -462,17 +378,12 @@ function SkillsPage() {
                   Ready to Build Something Amazing?
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  Let's discuss how my skills and expertise can help bring your project to life.
+                  Let's discuss how my technical skills can help bring your project to life.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  
                   <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
-                    View My Work
-                  </motion.button>
-                  <motion.button
+                    onClick={() => window.location.href = "/contact"}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="px-8 py-3 bg-white border border-gray-200 text-gray-700 font-medium rounded-full hover:border-gray-300 transition-all duration-300"

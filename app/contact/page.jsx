@@ -144,9 +144,8 @@ const strengths = [
 ];
 
 const stats = [
-  { value: "95%", label: "Client Satisfaction", icon: <Heart className="w-4 h-4" /> },
-  { value: "50+", label: "Projects Completed", icon: <CheckCircle className="w-4 h-4" /> },
-  { value: "3+", label: "Years Experience", icon: <Award className="w-4 h-4" /> },
+  { value: "3+", label: "Projects Completed", icon: <CheckCircle className="w-4 h-4" /> },
+  { value: "2", label: "Years Experience", icon: <Award className="w-4 h-4" /> },
   { value: "24h", label: "Avg. Response Time", icon: <Clock className="w-4 h-4" /> },
 ];
 
@@ -471,43 +470,7 @@ function ContactPage() {
             {/* Left Column - Contact Form */}
             <div className="lg:col-span-2">
               {/* HR CTA */}
-              <motion.div 
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.6 }}
-                className="bg-gradient-to-r from-blue-50/80 to-purple-50/80 rounded-2xl lg:rounded-3xl p-6 lg:p-8 mb-6 lg:mb-8 border border-blue-100/50 backdrop-blur-sm"
-              >
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl lg:rounded-2xl flex items-center justify-center shadow-lg">
-                      <Building className="w-6 lg:w-7 h-6 lg:h-7 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-1">Hiring for Your Team?</h3>
-                      <p className="text-sm lg:text-base text-gray-600">Let's discuss how I can contribute to your success</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap gap-3">
-                    <a 
-                      href="/resume.pdf" 
-                      target="_blank"
-                      download
-                      className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold text-sm lg:text-base px-4 lg:px-5 py-2 lg:py-3 rounded-xl hover:shadow-xl hover:shadow-blue-500/30 transition-all duration-300 hover:-translate-y-1"
-                    >
-                      <FileText className="w-4 lg:w-5 h-4 lg:h-5" />
-                      Resume
-                    </a>
-                    <a 
-                      href="https://www.linkedin.com/in/manoj-mano-ab565424a" 
-                      target="_blank"
-                      className="inline-flex items-center gap-2 bg-white text-gray-800 font-semibold text-sm lg:text-base px-4 lg:px-5 py-2 lg:py-3 rounded-xl border-2 border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-                    >
-                      <Linkedin className="w-4 lg:w-5 h-4 lg:h-5" />
-                      LinkedIn
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
+              
 
               {/* Contact Form */}
               <motion.div 
@@ -756,68 +719,9 @@ function ContactPage() {
               </motion.div>
 
               {/* Strengths */}
-              <motion.div 
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.9 }}
-                className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl lg:rounded-3xl p-6 lg:p-7 border border-blue-100/50"
-              >
-                <div className="mb-6 lg:mb-7">
-                  <h4 className="text-xl lg:text-2xl font-bold text-gray-900 mb-3 flex items-center gap-2">
-                    <Shield className="w-5 lg:w-6 h-5 lg:h-6 text-blue-600" />
-                    Why Choose Me?
-                  </h4>
-                  <p className="text-gray-600 text-sm lg:text-base">Key strengths for your team</p>
-                </div>
+             
 
-                <div className="space-y-4 lg:space-y-5">
-                  {strengths.map((strength, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: 10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 1 + index * 0.1 }}
-                      whileHover={{ x: 5 }}
-                      className="flex items-start gap-3 lg:gap-4 group"
-                    >
-                      <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-lg lg:rounded-xl bg-gradient-to-r from-white to-white flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow duration-300">
-                        <div className="text-blue-600">
-                          {strength.icon}
-                        </div>
-                      </div>
-                      <div>
-                        <h5 className="font-semibold text-gray-900 text-sm lg:text-base mb-1">{strength.text}</h5>
-                        <p className="text-xs lg:text-sm text-gray-600">{strength.subtext}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-
-              {/* Availability */}
-              <motion.div 
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1.1 }}
-                className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl lg:rounded-3xl p-6 lg:p-7 border border-purple-100/50 text-center"
-              >
-                <div className="relative inline-block mb-4 lg:mb-5">
-                  <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl lg:rounded-2xl flex items-center justify-center mx-auto shadow-lg">
-                    <Calendar className="w-6 lg:w-8 h-6 lg:h-8 text-white" />
-                  </div>
-                  <div className="absolute -top-2 -right-2 w-6 h-6 lg:w-8 lg:h-8 bg-white rounded-full flex items-center justify-center shadow-md border border-purple-100">
-                    <Clock className="w-3 lg:w-4 h-3 lg:h-4 text-purple-600" />
-                  </div>
-                </div>
-                <h4 className="text-lg lg:text-xl font-bold text-gray-900 mb-2">Ready to Connect</h4>
-                <p className="text-gray-600 text-sm lg:text-base mb-4 lg:mb-5">
-                  Flexible scheduling for interviews and discussions
-                </p>
-                <button className="text-blue-600 font-semibold hover:text-blue-700 inline-flex items-center gap-2 group text-sm lg:text-base">
-                  <span>Schedule a Call</span>
-                  <ArrowRight className="w-3 lg:w-4 h-3 lg:h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </motion.div>
+            
             </div>
           </div>
 
@@ -831,9 +735,7 @@ function ContactPage() {
             <p className="text-gray-500 text-sm">
               Looking forward to hearing from you! ✨
             </p>
-            <p className="text-gray-400 text-xs mt-2">
-              Typically respond within 4 hours during business days
-            </p>
+          
           </motion.div>
         </div>
       </section>
