@@ -264,7 +264,6 @@ const AboutSection = () => {
               <span ref={textRef} className="w-full"></span>
             </div>
 
-            {/* Description 1 */}
             <div className="w-full">
               <p className={`text-base sm:text-lg lg:text-xl text-slate-600 mb-6 leading-relaxed w-full animate-slide-left-06`}>
                 Passionate about creating beautiful, functional, and user-centered
@@ -282,7 +281,6 @@ const AboutSection = () => {
               </p>
             </div>
 
-            {/* Stats Grid - Full width */}
             <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-5 my-10">
               {[
                 { number: "3+", label: "Projects", className: "animate-stat-card-08" },
