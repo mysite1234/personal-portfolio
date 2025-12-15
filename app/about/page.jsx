@@ -285,7 +285,6 @@ const AboutSection = () => {
               {[
                 { number: "3+", label: "Projects", className: "animate-stat-card-08" },
                 { number: "2", label: "Years Exp", className: "animate-stat-card-09" },
-                { number: "100%", label: "Satisfaction", className: "animate-stat-card-10" },
               ].map((stat, index) => (
                 <div 
                   key={index} 
