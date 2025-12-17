@@ -74,7 +74,7 @@ const DownloadCVButton = () => {
     
     try {
       // Using your specific PDF file path
-      const response = await fetch("/Manoj_G_Resume.pdf");
+      const response = await fetch("/Manoj_G_FullStack_Developer_Resume (2).pdf");
       
       if (!response.ok) {
         throw new Error(`Failed to fetch PDF: ${response.status} ${response.statusText}`);
@@ -108,7 +108,7 @@ const DownloadCVButton = () => {
       // Fallback: Try direct download method
       try {
         const link = document.createElement("a");
-        link.href = "/Manoj.Resume.pdf";
+        link.href = "/Manoj_G_FullStack_Developer_Resume (2).pdf";
         link.download = "Manoj_Frontend_Developer_Resume.pdf";
         link.style.display = "none";
         document.body.appendChild(link);
@@ -149,7 +149,7 @@ const DownloadCVButton = () => {
       
       {error && (
         <div className="mt-2 text-sm text-red-600">
-          Failed to download. Please try again or <a href="/Manoj_G_Resume.pdf" target="_blank" className="underline">open in new tab</a>.
+          Failed to download. Please try again or <a href="/Manoj_G_FullStack_Developer_Resume (2).pdf" target="_blank" className="underline">open in new tab</a>.
         </div>
       )}
     </>
