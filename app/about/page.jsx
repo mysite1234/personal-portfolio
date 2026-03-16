@@ -124,7 +124,7 @@ const DownloadCVButton = () => {
 
   return (
     <>
-      <button
+     {/*  <button
         onClick={handleDownload}
         disabled={isDownloading}
         className="w-full sm:w-auto bg-gradient-to-br from-teal-700 to-blue-600 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl shadow-lg animate-slide-left-08 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
@@ -145,7 +145,7 @@ const DownloadCVButton = () => {
             Download CV
           </>
         )}
-      </button>
+      </button> */}
       
       {error && (
         <div className="mt-2 text-sm text-red-600">
